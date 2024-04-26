@@ -30,8 +30,18 @@ export const medicinesList = loadFromStorage();
 
 
 function loadFromStorage() {
- return JSON.parse(localStorage.getItem('medicinesList')) || [];
-}
+  
+    const storedMedicines = JSON.parse(localStorage.getItem('medicinesList')) || [];
+    storedMedicines.forEach(medicine => {
+      if (medicine.imageUrl) {
+        // Convert stored image URL string back to URL object
+        medicine.imageUrl = new URL(medicine.imageUrl);
+      }
+    });
+    return storedMedicines;
+  }
+  
+
 
 //let notifications = [];
 
