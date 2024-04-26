@@ -30,15 +30,7 @@ export const medicinesList = loadFromStorage();
 
 
 function loadFromStorage() {
-  
-    const storedMedicines = JSON.parse(localStorage.getItem('medicinesList')) || [];
-    storedMedicines.forEach(medicine => {
-      if (medicine.imageUrl) {
-        // Convert stored image URL string back to URL object
-        medicine.imageUrl = new URL(medicine.imageUrl);
-      }
-    });
-    return storedMedicines;
+   return JSON.parse(localStorage.getItem('medicinesList')) || [];
   }
   
 
@@ -129,12 +121,17 @@ export function renderMedicinesList() {
       expiredClass = 'due-today';
     }
 
+    let imageSrc = imageUrl;
+    if (imageUrl instanceof URL) {
+      imageSrc = imageUrl.href; // Get the URL as a string
+    }
+
     return `
     <div class="details  ${expiredClass}">
       <div class="brand-name-display">${name}</div> 
       <div class="due-date-name-display">${dueDate}</div>
       <div class="description-display">${description}</div>
-      <div class="image-container">${imageUrl ? `<img src="${imageUrl}" alt="medicine-Image">` : 'No Image'}</div>
+      <div class="image-container">${imageSrc ? `<img src="${imageSrc}" alt="medicine-Image">` : 'No Image'}</div>
       <div class="quantity-display">${quantity} quantity</div>
       <button class="delete-medicines-button js-delete-medicines-button">Delete</button>
       <button class="edit-medicines-button js-edit-medicines-button">Edit</button>
