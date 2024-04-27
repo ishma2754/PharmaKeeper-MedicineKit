@@ -96,7 +96,7 @@ export function applyFilter() {
       return; 
     }
 
-
+    
     if (imageFile){
       const url = URL.createObjectURL(imageFile);
 
@@ -117,12 +117,9 @@ export function applyFilter() {
 
       URL.revokeObjectURL(url);
     }
-
-  }
-
-  /*
     
-    if (imageFile) {
+
+    /*if (imageFile) {
       const reader = new FileReader();
       reader.onload = function(e) {
         const imageUrl = e.target.result;
@@ -140,6 +137,10 @@ export function applyFilter() {
      
     }
     */
+
+  }
+
+  
   
     
 
