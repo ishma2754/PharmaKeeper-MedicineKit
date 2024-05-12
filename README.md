@@ -1,1 +1,1 @@
-# PharmaKeeper-MedicineKit expiry tracker
+# PharmaKeeper-MedicineKit
