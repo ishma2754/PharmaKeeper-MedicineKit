@@ -105,8 +105,6 @@ body{
   width: 100%; 
 }
 
-
-
 .earliest-name{
   color: white ;
 }
@@ -117,8 +115,6 @@ body{
 
 
 .name-input,
-.quantity-input,
-.description-input,
 .due-date-input,
 .filter-name-input,
 .filter-date-input{
@@ -130,9 +126,19 @@ body{
   border-radius: 60px;
   border: none;
   outline: none;
-  color: black;
 }
 
+.name-input,
+.description-input,
+.quantity-input {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 60px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
 
 
 .image-input{
@@ -145,8 +151,7 @@ body{
   padding-left: 10px;
 }
 
-.due-date-input,
-.filter-date-input{
+.due-date-input{
   color: red;
 }
 
@@ -155,7 +160,17 @@ body{
   padding: 10px;
 }
 
+.filter-name-input{
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+}
 
+.filter-date-input{
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+}
 
 .total-medicines{
   font-size: 20px;
@@ -166,19 +181,48 @@ body{
   font-weight: bold;
 }
 
+.description-input {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px;
+  resize: vertical;
+  min-height: 28px;
+  max-height: 28px;
+  min-width: 200px;
+  max-width: 250px;
+  
+  
+}
 
-
+.description-display
+ {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 6px;
+  min-height: auto; 
+  max-height: 150px; 
+  min-width: 200px; 
+  max-width: 250px; 
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden;
+  align-items: start;
+  pointer-events: none; /* Prevent mouse events */
+  user-select: none; /* Prevent text selection */
+  border: none;
+  
+}
 .description-display,
 .brand-name-display,
-.quantity-display,
-.due-date-name-display{
+.quantity-display{
   color: black;
   font-weight: bold;
   font-size: 18px;
 }
 
-.due-date-name-display {
-  color: red;
+.due-date-name-display{
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .add-medicines-button,
@@ -230,6 +274,9 @@ body{
     padding: 5px 5px;
     width: 100%;
   }
+
+ 
+
 }
 
 
@@ -250,7 +297,6 @@ body{
     margin-right: 10px;
   }
 
-
   .medicines-grid-display,
   .filter-medicines-show{
     grid-template-columns: repeat(1, 223px);
@@ -259,12 +305,10 @@ body{
   .details {
     display: flex;
     flex-direction: column;
-    min-width: 223px;
-     /* Adjust width for smaller screens */
+    width: auto; /* Adjust width for smaller screens */
     max-width: 95%; /* Prevents the cart item from taking full width on very small screens */
     margin: 0 auto; /* Center the cart item if you're using width less than 100% */
   }
-
 
   .medicines-input-grid,
   .filter-section
@@ -282,7 +326,6 @@ body{
  .details img:hover{
   transform: scale(1.2);
  }
-
 
  .add-medicines-button{
   padding-top: 10px;
